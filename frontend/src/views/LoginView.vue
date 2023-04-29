@@ -3,7 +3,11 @@
 </script>
 
 <template>
-    <div>
-        <h1>You are on the login page</h1>
+    <div class="login-body">
+        <div class="login-box">
+            <p class="login-header">Login Via Google</p>
+            <button class="login-btn">Log In</button>
+            <button class="sign-up-btn">Sign Up</button>
+        </div>
     </div>
 </template>
