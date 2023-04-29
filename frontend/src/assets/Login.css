@@ -20,7 +20,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    box-shadow: 5px 5px 10px #D21312;
+    box-shadow: 5px 5px 20px #D21312;
 }
 
 .login-header {
