@@ -9,8 +9,13 @@
 </script>
 
 <template>
-    <Header />
+    <div class = "landingPage-body">
+        <Header />
     <h1>You are on the landing page</h1>
+    </div>
+    
+    
+    
 </template>
 
 

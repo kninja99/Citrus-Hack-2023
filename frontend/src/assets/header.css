@@ -1,0 +1,7 @@
+.header {
+    grid-area: header;
+    background-color: #003DA5;
+    border-bottom: solid #FFB718 4px;
+    color: var(--White);
+}
+
