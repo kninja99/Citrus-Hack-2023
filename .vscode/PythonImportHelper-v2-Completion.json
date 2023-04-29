@@ -1,0 +1,166 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy.sql",
+        "description": "sqlalchemy.sql",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.sql",
+        "documentation": {}
+    },
+    {
+        "label": "twilio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "twilio",
+        "description": "twilio",
+        "detail": "twilio",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "twilio.rest",
+        "description": "twilio.rest",
+        "isExtraImport": true,
+        "detail": "twilio.rest",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "Workouts",
+        "kind": 6,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "class Workouts(db.Model):\n    id = db.Column(db.Integer, primary_key = True, autoincrement=True)\n    title = db.Column(db.String(100), nullable = False)\n    desc = db.Column(db.Text)\n    typeOfWorkout =db.Column(db.String(100))\n    bodyPart = db.Column(db.String(100))\n    equipment = db.Column(db.String(150))\n    level = db.Column(db.String(100))\n    rating = db.Column(db.Float)\n    # adding a string representation",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "ping_pong",
+        "kind": 2,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "def ping_pong():\n    return jsonify('pong!')\nif __name__ == '__main__':\n    app.run()",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "basedir",
+        "kind": 5,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "basedir = os.path.abspath(os.path.dirname(__file__))\n# instantiate the app\napp = Flask(__name__)\napp.config.from_object(__name__)\n# DB Setup with SQLite\napp.config['SQLALCHEMY_DATABASE_URI'] =\\\n        'sqlite:///' + os.path.join(basedir, 'database.db')\napp.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False\ndb = SQLAlchemy(app)\n# Create DB model",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "app = Flask(__name__)\napp.config.from_object(__name__)\n# DB Setup with SQLite\napp.config['SQLALCHEMY_DATABASE_URI'] =\\\n        'sqlite:///' + os.path.join(basedir, 'database.db')\napp.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False\ndb = SQLAlchemy(app)\n# Create DB model\nclass Workouts(db.Model):\n    id = db.Column(db.Integer, primary_key = True, autoincrement=True)",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config['SQLALCHEMY_TRACK_MODIFICATIONS']",
+        "kind": 5,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False\ndb = SQLAlchemy(app)\n# Create DB model\nclass Workouts(db.Model):\n    id = db.Column(db.Integer, primary_key = True, autoincrement=True)\n    title = db.Column(db.String(100), nullable = False)\n    desc = db.Column(db.Text)\n    typeOfWorkout =db.Column(db.String(100))\n    bodyPart = db.Column(db.String(100))\n    equipment = db.Column(db.String(150))",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "db = SQLAlchemy(app)\n# Create DB model\nclass Workouts(db.Model):\n    id = db.Column(db.Integer, primary_key = True, autoincrement=True)\n    title = db.Column(db.String(100), nullable = False)\n    desc = db.Column(db.Text)\n    typeOfWorkout =db.Column(db.String(100))\n    bodyPart = db.Column(db.String(100))\n    equipment = db.Column(db.String(150))\n    level = db.Column(db.String(100))",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "account_sid",
+        "kind": 5,
+        "importPath": "twilio.sms",
+        "description": "twilio.sms",
+        "peekOfCode": "account_sid = os.getenv('TWILIO_ACCOUNT_SID')\nauth_token = os.getenv('TWILIO_AUTH_TOKEN')\nclient = Client(account_sid, auth_token)\nmessage = client.messages \\\n                .create(\n                     body=\"Join Earth's mightiest heroes. Like Kevin Bacon.\",\n                     from_='+16052504952',\n                     to='+19515303820'\n                 )\nprint(message.sid)",
+        "detail": "twilio.sms",
+        "documentation": {}
+    },
+    {
+        "label": "auth_token",
+        "kind": 5,
+        "importPath": "twilio.sms",
+        "description": "twilio.sms",
+        "peekOfCode": "auth_token = os.getenv('TWILIO_AUTH_TOKEN')\nclient = Client(account_sid, auth_token)\nmessage = client.messages \\\n                .create(\n                     body=\"Join Earth's mightiest heroes. Like Kevin Bacon.\",\n                     from_='+16052504952',\n                     to='+19515303820'\n                 )\nprint(message.sid)",
+        "detail": "twilio.sms",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "twilio.sms",
+        "description": "twilio.sms",
+        "peekOfCode": "client = Client(account_sid, auth_token)\nmessage = client.messages \\\n                .create(\n                     body=\"Join Earth's mightiest heroes. Like Kevin Bacon.\",\n                     from_='+16052504952',\n                     to='+19515303820'\n                 )\nprint(message.sid)",
+        "detail": "twilio.sms",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 5,
+        "importPath": "twilio.sms",
+        "description": "twilio.sms",
+        "peekOfCode": "message = client.messages \\\n                .create(\n                     body=\"Join Earth's mightiest heroes. Like Kevin Bacon.\",\n                     from_='+16052504952',\n                     to='+19515303820'\n                 )\nprint(message.sid)",
+        "detail": "twilio.sms",
+        "documentation": {}
+    }
+]
