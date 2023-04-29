@@ -2,4 +2,4 @@ api/.env
 api/__pycache__
 twilio/env
 api/env
-
+api/client_secret.json
