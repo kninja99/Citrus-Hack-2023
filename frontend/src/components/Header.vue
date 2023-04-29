@@ -7,5 +7,8 @@
 
 
 <template>
-    <h1>landing PAGE header</h1>
+    <header class = "header">
+        <div class = "AI-logo">AI|want2workout</div>
+    </header>
+    
 </template>
