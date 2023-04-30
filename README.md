@@ -17,3 +17,12 @@ python -m venv env
 ```
 pip install -r requirements.txt
 ```
+
+Questions to be asked for onboarding:
+
+1) First and Last Name
+2) Phone Number
+3) Height, Age and Weight
+4) Fitness Goals (how often they want to workout)
+5) experiance in the gym
+6) Equipment they have (dropdown menu)
