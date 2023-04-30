@@ -11,7 +11,7 @@
     height: 80px;
     top: 0px;
     grid-area: header;
-    background-image: linear-gradient(black, #00000000); /*temporary*/
+    background-image: linear-gradient(black, #00000000);
     color: var(--White);
     
 }

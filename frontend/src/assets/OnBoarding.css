@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Archivo+Black);
+
+
 .on-boarding-questionair {
     width: 80%;
     height: 80%;
@@ -6,12 +9,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background-image: linear-gradient(rgb(255, 255, 255), #00000000);
+    border-radius: 25px;
+    font-family: 'Archivo Black';
 }
 
 .on-boarding-header {
     font-size: 24px;
     font-weight: 600;
+    font-family: 'Archivo Black';
+    padding-top: 20px;
+    padding-bottom: 15px;
 }
 
 .form-btn {
@@ -22,9 +30,52 @@
     justify-items: center;
     color: #FFF;
     font-size: 16px;
+    font-family: 'Archivo Black';
 }
 
 .form-btn:hover{
     background-color: #D21312;
     cursor: pointer;
+}
+
+.question{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.question-inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+    box-sizing: border-box;
+    border-color: #D21312;
+
+}
+
+.namefill{
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Archivo Black';
+    color: #000000;
+    border: #000000 solid 2px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    padding: 0px 0px 0px 5px;
+    padding-bottom: 5px;
+    width: 300px;
+}
+
+.fillform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.checkelement{
+    display: flex;
+    justify-content: space-between;
 }
