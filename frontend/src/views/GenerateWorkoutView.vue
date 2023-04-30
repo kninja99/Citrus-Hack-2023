@@ -12,7 +12,7 @@ export default {
     <div class="container">
         <Header />
         <div class="generate-workout">
-            <h1 class="workout">generate a new workout</h1>
+            <div class="workout"></div>
         </div>
     </div>
 </template>
