@@ -2,6 +2,7 @@
 @import url('./OnBoarding.css');
 @import url('./landingPage.css');
 @import url('./header.css');
+@import url('./nav.css');
 
 * {
   margin: 0;
