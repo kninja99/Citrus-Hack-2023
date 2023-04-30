@@ -1,4 +1,4 @@
-# Citrus-Hack-2023
+# Citrus-Hack-2023 (24 hour hackathon)
 AIWantToWorkout is an AI fitness web application that sends you personalized workouts based on your fitness goals and available equipment (such as dumbbells, barbells, cables, or no equipment). Every morning, you will receive a text message for your scheduled workout for the day (or motivational message on your rest days)!
 
 
@@ -18,11 +18,27 @@ python -m venv env
 pip install -r requirements.txt
 ```
 
-Questions to be asked for onboarding:
 
-1) First and Last Name
-2) Phone Number
-3) Height, Age and Weight
-4) Fitness Goals (how often they want to workout)
-5) experiance in the gym
-6) Equipment they have (dropdown menu)
+## Vue FrontEnd setup
+
+1) Make sure you have Javascript, Node.js, and NPM installed
+2) CD into frontend directory
+3) install all package dependencies with the following command
+```
+npm install
+```
+4) Once you are done installing the packages your front end will be setup
+
+## How to Start the APP
+
+1) Open two terminals
+2) In your 1st teerminal cd into your api directory and activate your python virtual enviorment. Once that is activate run the following command in your terminal
+```
+flask run
+```
+* note: make sure your flask server is running on the default port 5000
+3) next in your 2nd terminal cd into your Vue frontend folder and run the following command
+```
+npm run dev
+```
+4) now that both servers are running you can use the app by accessing your frontend url displayed in terminal
