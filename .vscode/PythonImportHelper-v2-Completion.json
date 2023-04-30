@@ -24,7 +24,6 @@
         "detail": "flask",
         "documentation": {}
     },
-    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
@@ -115,57 +114,129 @@
         "documentation": {}
     },
     {
-        "label": "Workouts",
-        "kind": 6,
-        "importPath": "api.app",
-        "description": "api.app",
-        "peekOfCode": "class Workouts(db.Model):\n    id = db.Column(db.Integer, primary_key = True, autoincrement=True)\n    title = db.Column(db.String(100), nullable = False)\n    desc = db.Column(db.Text)\n    typeOfWorkout =db.Column(db.String(100))\n    bodyPart = db.Column(db.String(100))\n    equipment = db.Column(db.String(150))\n    level = db.Column(db.String(100))\n    rating = db.Column(db.Float)\n    # adding a string representation",
-        "detail": "api.app",
-        "documentation": {}
-    },
-    {
         "label": "ping_pong",
         "kind": 2,
         "importPath": "api.app",
         "description": "api.app",
-        "peekOfCode": "def ping_pong():\n    return jsonify('pong!')\nif __name__ == '__main__':\n    app.run()",
+        "peekOfCode": "def ping_pong():\n    return jsonify('pong!')\n@app.route('/generate', methods=['GET'])\ndef generate_workout():\n    workouts = jsonify(gen_workout(MUSCLE, EXPERIENCE_LEVEL, EQUIPMENT))\n    return workouts\nif __name__ == '__main__':\n    app.run()",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "generate_workout",
+        "kind": 2,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "def generate_workout():\n    workouts = jsonify(gen_workout(MUSCLE, EXPERIENCE_LEVEL, EQUIPMENT))\n    return workouts\nif __name__ == '__main__':\n    app.run()",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "MUSCLE",
+        "kind": 5,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "MUSCLE = \"Chest\"\nEXPERIENCE_LEVEL = \"Intermediate\"\n# EQUIPMENT = [\"Dumbbell\"]\nEQUIPMENT = \"Dumbbell\"\n# enable CORS\nCORS(app, resources={r'/*': {'origins': '*'}})\n# sanity check route\n@app.route('/ping', methods=['GET'])\ndef ping_pong():\n    return jsonify('pong!')",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "EXPERIENCE_LEVEL",
+        "kind": 5,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "EXPERIENCE_LEVEL = \"Intermediate\"\n# EQUIPMENT = [\"Dumbbell\"]\nEQUIPMENT = \"Dumbbell\"\n# enable CORS\nCORS(app, resources={r'/*': {'origins': '*'}})\n# sanity check route\n@app.route('/ping', methods=['GET'])\ndef ping_pong():\n    return jsonify('pong!')\n@app.route('/generate', methods=['GET'])",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "EQUIPMENT",
+        "kind": 5,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "EQUIPMENT = \"Dumbbell\"\n# enable CORS\nCORS(app, resources={r'/*': {'origins': '*'}})\n# sanity check route\n@app.route('/ping', methods=['GET'])\ndef ping_pong():\n    return jsonify('pong!')\n@app.route('/generate', methods=['GET'])\ndef generate_workout():\n    workouts = jsonify(gen_workout(MUSCLE, EXPERIENCE_LEVEL, EQUIPMENT))",
         "detail": "api.app",
         "documentation": {}
     },
     {
         "label": "basedir",
         "kind": 5,
-        "importPath": "api.app",
-        "description": "api.app",
-        "peekOfCode": "basedir = os.path.abspath(os.path.dirname(__file__))\n# instantiate the app\napp = Flask(__name__)\napp.config.from_object(__name__)\n# DB Setup with SQLite\napp.config['SQLALCHEMY_DATABASE_URI'] =\\\n        'sqlite:///' + os.path.join(basedir, 'database.db')\napp.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False\ndb = SQLAlchemy(app)\n# Create DB model",
-        "detail": "api.app",
+        "importPath": "api.init_db",
+        "description": "api.init_db",
+        "peekOfCode": "basedir = os.path.abspath(os.path.dirname(__file__))\n# instantiate the app\napp = Flask(__name__)\napp.config.from_object(__name__)\n# DB Setup with SQLite\napp.config['SQLALCHEMY_DATABASE_URI'] =\\\n        'sqlite:///' + os.path.join(basedir, 'database.db')\napp.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False\ndb = SQLAlchemy(app)",
+        "detail": "api.init_db",
         "documentation": {}
     },
     {
         "label": "app",
         "kind": 5,
-        "importPath": "api.app",
-        "description": "api.app",
-        "peekOfCode": "app = Flask(__name__)\napp.config.from_object(__name__)\n# DB Setup with SQLite\napp.config['SQLALCHEMY_DATABASE_URI'] =\\\n        'sqlite:///' + os.path.join(basedir, 'database.db')\napp.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False\ndb = SQLAlchemy(app)\n# Create DB model\nclass Workouts(db.Model):\n    id = db.Column(db.Integer, primary_key = True, autoincrement=True)",
-        "detail": "api.app",
+        "importPath": "api.init_db",
+        "description": "api.init_db",
+        "peekOfCode": "app = Flask(__name__)\napp.config.from_object(__name__)\n# DB Setup with SQLite\napp.config['SQLALCHEMY_DATABASE_URI'] =\\\n        'sqlite:///' + os.path.join(basedir, 'database.db')\napp.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False\ndb = SQLAlchemy(app)",
+        "detail": "api.init_db",
         "documentation": {}
     },
     {
         "label": "app.config['SQLALCHEMY_TRACK_MODIFICATIONS']",
         "kind": 5,
-        "importPath": "api.app",
-        "description": "api.app",
-        "peekOfCode": "app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False\ndb = SQLAlchemy(app)\n# Create DB model\nclass Workouts(db.Model):\n    id = db.Column(db.Integer, primary_key = True, autoincrement=True)\n    title = db.Column(db.String(100), nullable = False)\n    desc = db.Column(db.Text)\n    typeOfWorkout =db.Column(db.String(100))\n    bodyPart = db.Column(db.String(100))\n    equipment = db.Column(db.String(150))",
-        "detail": "api.app",
+        "importPath": "api.init_db",
+        "description": "api.init_db",
+        "peekOfCode": "app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False\ndb = SQLAlchemy(app)",
+        "detail": "api.init_db",
         "documentation": {}
     },
     {
         "label": "db",
         "kind": 5,
-        "importPath": "api.app",
-        "description": "api.app",
-        "peekOfCode": "db = SQLAlchemy(app)\n# Create DB model\nclass Workouts(db.Model):\n    id = db.Column(db.Integer, primary_key = True, autoincrement=True)\n    title = db.Column(db.String(100), nullable = False)\n    desc = db.Column(db.Text)\n    typeOfWorkout =db.Column(db.String(100))\n    bodyPart = db.Column(db.String(100))\n    equipment = db.Column(db.String(150))\n    level = db.Column(db.String(100))",
-        "detail": "api.app",
+        "importPath": "api.init_db",
+        "description": "api.init_db",
+        "peekOfCode": "db = SQLAlchemy(app)",
+        "detail": "api.init_db",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "api.load_csv_data",
+        "description": "api.load_csv_data",
+        "peekOfCode": "data = pd.read_csv(\"../megaGymDataset.csv\", index_col=0, delimiter=\",\")\ndf = pd.DataFrame(data)\ntry:\n    basedir = os.path.abspath(os.path.dirname(__file__))\n    # instantiate the app\n    app = Flask(__name__)\n    app.config.from_object(__name__)\n    # DB Setup with SQLite\n    app.config['SQLALCHEMY_DATABASE_URI'] =\\\n            'sqlite:///' + os.path.join(basedir, 'database.db')",
+        "detail": "api.load_csv_data",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "api.load_csv_data",
+        "description": "api.load_csv_data",
+        "peekOfCode": "df = pd.DataFrame(data)\ntry:\n    basedir = os.path.abspath(os.path.dirname(__file__))\n    # instantiate the app\n    app = Flask(__name__)\n    app.config.from_object(__name__)\n    # DB Setup with SQLite\n    app.config['SQLALCHEMY_DATABASE_URI'] =\\\n            'sqlite:///' + os.path.join(basedir, 'database.db')\n    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False",
+        "detail": "api.load_csv_data",
+        "documentation": {}
+    },
+    {
+        "label": "Workouts",
+        "kind": 6,
+        "importPath": "api.models",
+        "description": "api.models",
+        "peekOfCode": "class Workouts(db.Model):\n    id = db.Column(db.Integer, primary_key = True, autoincrement=True)\n    title = db.Column(db.String(100), nullable = False)\n    desc = db.Column(db.Text)\n    typeOfWorkout =db.Column(db.String(100))\n    bodyPart = db.Column(db.String(100))\n    equipment = db.Column(db.String(150))\n    level = db.Column(db.String(100))\n    rating = db.Column(db.Float)\n    # adding a string representation",
+        "detail": "api.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "api.models",
+        "description": "api.models",
+        "peekOfCode": "class User(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(100), nullable=False)\n    email = db.Column(db.String(100), unique=True, nullable=False)\n    profile_pic = db.Column(db.String(200), nullable=False)\n    def __repr__(self):\n        return f'<User {self.name}>'",
+        "detail": "api.models",
+        "documentation": {}
+    },
+    {
+        "label": "gen_workout",
+        "kind": 2,
+        "importPath": "api.workouts",
+        "description": "api.workouts",
+        "peekOfCode": "def gen_workout(muscle_group, experience_level, equipment):\n    data = []\n    workouts = Workouts.query.filter(Workouts.bodyPart==muscle_group, Workouts.level==experience_level, Workouts.equipment==equipment).limit(5)\n    for w in workouts:\n        d = []\n        d.append(w.title)\n        d.append(w.bodyPart)\n        d.append(w.level)\n        data.append(d)\n    return data",
+        "detail": "api.workouts",
         "documentation": {}
     },
     {

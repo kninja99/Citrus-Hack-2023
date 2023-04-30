@@ -42,4 +42,6 @@ try:
 except Exception as e:
     print("Error while connecting to MySQL", e)
 
+finally:
+    db.session.close()
 
