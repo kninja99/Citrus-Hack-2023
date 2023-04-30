@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Archivo+Black);
+
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    top: 0px;
+    grid-area: header;
+    background-image: linear-gradient(black, #00000000); /*temporary*/
+    color: var(--White);
+    
+}
+.AI-title1 {
+    color: #FFFFFF;
+    font-weight:100;
+    font-family: 'Archivo Black';
+    font-size: 40px;
+    padding-left: 25px;
+}
+.AI-title2 {
+    color: #D21312;
+    font-weight:100;
+    font-family: 'Archivo Black';
+    font-size: 40px;
+}
+.AI-title3 {
+    color: #FFFFFF;
+    font-weight:100;
+    font-family: 'Archivo Black';
+    font-size: 40px;
+}
+.AI-logo {
+    color: #D21312;
+    font-weight:100;
+    font-size: 20px;
+
+}
+
