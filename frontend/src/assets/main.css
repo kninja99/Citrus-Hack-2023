@@ -1,5 +1,7 @@
 @import url('./Login.css');
 @import url('./OnBoarding.css');
+@import url('./landingPage.css');
+@import url('./header.css');
 
 * {
   margin: 0;
