@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-            questions: ["Please Enter Your First and Last Name", "Please Enter Your Phone Number", "Please Enter your Height in Inches and Weight in Pounds", "How many times would you like to workout per week?", "What is your experiance in the gym?", "Congradulations, you can now generate your first workout!"],
+            questions: ["Please Enter Your First and Last Name", "Please Enter Your Phone Number", "Please Enter your Height in Inches and Weight in Pounds", "How many times would you like to workout per week?", "What is your experiance in the gym?", "Select your available equipment", "Congradulations, you can now generate your first workout!"],
             questionIndex: 0,
             form: {}
         }
@@ -84,7 +84,8 @@ export default {
                     <input @click="this.radioEvent" type="checkbox" name="bands" id="bands" value="Bands">
                 </form>
             </div>
-            <button @click="this.advanceQuestion" class="form-btn">Next</button>
+            <button v-if="questionIndex < 6" @click="this.advanceQuestion" class="form-btn">Next</button>
+            <button v-else class="form-btn">Finish!</button>
         </div>
     </div>
 </template>
