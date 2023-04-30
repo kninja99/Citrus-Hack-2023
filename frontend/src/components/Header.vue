@@ -17,10 +17,10 @@ export default {
         </div>
         <NavBtn />
         <div class="nav-bar">
-            <button class="nav1">Home</button>
-            <button class="nav2">Workout Generator</button>
-            <button class="nav3">Profile</button>
-            <button class="nav4">Exercise History</button>
+            <button class="nav-link">Home</button>
+            <button class="nav-link">Workout Generator</button>
+            <button class="nav-link">Profile</button>
+            <button class="nav-link">Exercise History</button>
         </div>
     </header>
 </template>

@@ -45,3 +45,22 @@
     font-size: 20px;
 
 }
+
+@media all and (max-height:997px) {
+        .AI-title1 {
+            font-size: 25px;
+            /* padding-left: 25px; */
+        }
+    
+        .AI-title2 {
+            font-size: 25px;
+        }
+    
+        .AI-title3 {
+            font-size: 25px;
+        }
+    
+        .AI-logo {
+            font-size: 10px;
+        }
+}
