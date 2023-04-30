@@ -20,7 +20,7 @@
 }
 
 .workout {
-    width: 80%;
+    width: 100%;
     min-width: 350px;
     background-color: rgb(18, 18, 18);
     height: 100%;
@@ -31,7 +31,7 @@
 }
 
 .workout-table {
-    background-color: teal;
+    background-color: rgba(175, 175, 175, 0.2);
     color: #fff;
 }
 
@@ -46,4 +46,8 @@ td {
     border: 1px solid;
     text-align: center;
     vertical-align: middle;
+}
+
+.workout-header-container {
+    background-color: #D21312;
 }
