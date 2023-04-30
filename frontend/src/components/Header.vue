@@ -12,11 +12,11 @@
             <div class = "AI-logo"></div>
         </div>
         <div class = "nav-bar">
-        <div class = "nav1">Home</div>
-        <div class = "nav2">Workout Generator</div>
-        <div class = "nav3">Profile</div>
-        <div class = "nav4">Exercise History</div>
-    </div>
+            <button class = "nav1">Home</button>
+            <button class = "nav2">Workout Generator</button>
+            <button class = "nav3">Profile</button>
+            <button class = "nav4">Exercise History</button>
+        </div>
     </header>
     
 </template>

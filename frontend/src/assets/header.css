@@ -91,3 +91,11 @@
     font-size: 18px;
     padding-left: 25px;
 }
+
+.nav1:hover,
+.nav2:hover,
+.nav3:hover,
+.nav4:hover {
+    color: #D21312;
+    cursor: pointer;
+}
