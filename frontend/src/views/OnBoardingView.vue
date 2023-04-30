@@ -8,6 +8,9 @@ export default {
         }
     },
     methods: {
+        /**
+         * advance what question is being displayed
+         */
         advanceQuestion: function () {
             console.log(this.form)
             this.questionIndex += 1;
