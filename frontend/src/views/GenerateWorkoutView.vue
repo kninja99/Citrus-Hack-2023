@@ -4,6 +4,7 @@ import Header from "../components/Header.vue";
 export default {
     data: function () {
         return {
+            muscleTarget: "Chest",
             workout: null
         };
     },
@@ -12,13 +13,18 @@ export default {
     },
     methods: {
         generateWorkout: async function () {
-            await axios.get('http://localhost:5000/generate')
+            let muscleTarget = this.muscleTarget;
+            await axios.get('http://localhost:5000/generate', {
+                params: {
+                    Muscle: muscleTarget
+                }
+            })
                 .then((res) => {
                     this.workout = res.data;
                 })
                 .catch((err) => {
                     console.log(err);
-                })
+                });
         }
     }
 }
@@ -29,7 +35,23 @@ export default {
         <Header />
         <div class="generate-workout">
             <div class="workout">
-                <button @click="this.generateWorkout" class="generate-workout-btn">Generate Workout</button>
+                <div class="generation-form">
+                    <p class="ai-motivation-text">The only bad workout is the one that didn't happen. Generate your workout
+                        now
+                        using AI.</p>
+                    <div class="workout-inputs">
+                        <select v-model="muscleTarget" id="muscle-selector" aria-placeholder="Please Select a Workout">
+                            <option value="Chest" selected>Chest</option>
+                            <option value="Triceps">Triceps</option>
+                            <option value="Biceps">Biceps</option>
+                            <option value="Shoulders">Shoulders</option>
+                            <option value="Quadriceps">Quads</option>
+                        </select>
+                        <button @click="this.generateWorkout" class="generate-workout-btn">Generate Workout</button>
+                    </div>
+
+                </div>
+
                 <table v-if="this.workout" class="workout-table">
                     <tr class="workout-header-container">
                         <th>Workout Name</th>
