@@ -1,0 +1,30 @@
+.on-boarding-questionair {
+    width: 80%;
+    height: 80%;
+    max-width: 600px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+
+.on-boarding-header {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.form-btn {
+    width: 100px;
+    height: 25px;
+    background-color: #ED2B2A;
+    border-radius: 25px;
+    justify-items: center;
+    color: #FFF;
+    font-size: 16px;
+}
+
+.form-btn:hover{
+    background-color: #D21312;
+    cursor: pointer;
+}
