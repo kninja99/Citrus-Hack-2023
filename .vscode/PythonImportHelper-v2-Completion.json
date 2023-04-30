@@ -24,31 +24,6 @@
         "detail": "flask",
         "documentation": {}
     },
-    {
-        "label": "render_template",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
@@ -81,51 +56,11 @@
         "documentation": {}
     },
     {
-        "label": "SQLAlchemy",
-        "importPath": "flask_sqlalchemy",
-        "description": "flask_sqlalchemy",
-        "isExtraImport": true,
-        "detail": "flask_sqlalchemy",
-        "documentation": {}
-    },
-    {
         "label": "func",
         "importPath": "sqlalchemy.sql",
         "description": "sqlalchemy.sql",
         "isExtraImport": true,
         "detail": "sqlalchemy.sql",
-        "documentation": {}
-    },
-    {
-        "label": "db",
-        "importPath": "init_db",
-        "description": "init_db",
-        "isExtraImport": true,
-        "detail": "init_db",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "importPath": "init_db",
-        "description": "init_db",
-        "isExtraImport": true,
-        "detail": "init_db",
-        "documentation": {}
-    },
-    {
-        "label": "db",
-        "importPath": "init_db",
-        "description": "init_db",
-        "isExtraImport": true,
-        "detail": "init_db",
-        "documentation": {}
-    },
-    {
-        "label": "gen_workout",
-        "importPath": "workouts",
-        "description": "workouts",
-        "isExtraImport": true,
-        "detail": "workouts",
         "documentation": {}
     },
     {
@@ -151,14 +86,6 @@
         "description": "app",
         "isExtraImport": true,
         "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "Workouts",
-        "importPath": "models",
-        "description": "models",
-        "isExtraImport": true,
-        "detail": "models",
         "documentation": {}
     },
     {
@@ -310,6 +237,24 @@
         "description": "api.workouts",
         "peekOfCode": "def gen_workout(muscle_group, experience_level, equipment):\n    data = []\n    workouts = Workouts.query.filter(Workouts.bodyPart==muscle_group, Workouts.level==experience_level, Workouts.equipment==equipment).limit(5)\n    for w in workouts:\n        d = []\n        d.append(w.title)\n        d.append(w.bodyPart)\n        d.append(w.level)\n        data.append(d)\n    return data",
         "detail": "api.workouts",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "api.load_csv_data",
+        "description": "api.load_csv_data",
+        "peekOfCode": "data = pd.read_csv(\"../megaGymDataset.csv\", index_col=0, delimiter=\",\")\ndf = pd.DataFrame(data)\ntry:\n    basedir = os.path.abspath(os.path.dirname(__file__))\n    # instantiate the app\n    app = Flask(__name__)\n    app.config.from_object(__name__)\n    # DB Setup with SQLite\n    app.config['SQLALCHEMY_DATABASE_URI'] =\\\n            'sqlite:///' + os.path.join(basedir, 'database.db')",
+        "detail": "api.load_csv_data",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "api.load_csv_data",
+        "description": "api.load_csv_data",
+        "peekOfCode": "df = pd.DataFrame(data)\ntry:\n    basedir = os.path.abspath(os.path.dirname(__file__))\n    # instantiate the app\n    app = Flask(__name__)\n    app.config.from_object(__name__)\n    # DB Setup with SQLite\n    app.config['SQLALCHEMY_DATABASE_URI'] =\\\n            'sqlite:///' + os.path.join(basedir, 'database.db')\n    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False",
+        "detail": "api.load_csv_data",
         "documentation": {}
     },
     {
