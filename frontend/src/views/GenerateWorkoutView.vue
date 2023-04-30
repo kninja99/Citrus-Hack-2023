@@ -13,8 +13,13 @@ export default {
     },
     methods: {
         generateWorkout: async function () {
+            let muscelTarget = this.muscelTarget;
             console.log(this.muscelTarget);
-            await axios.get('http://localhost:5000/generate')
+            await axios.get('http://localhost:5000/generate', {
+                params: {
+                    Muscle: muscelTarget
+                }
+            })
                 .then((res) => {
                     this.workout = res.data;
                 })
