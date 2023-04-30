@@ -17,10 +17,26 @@ export default {
         </div>
         <NavBtn />
         <div class="nav-bar">
-            <button class="nav-link">Home</button>
-            <button class="nav-link">Workout Generator</button>
-            <button class="nav-link">Profile</button>
-            <button class="nav-link">Exercise History</button>
+            <router-link to="/" custom v-slot="{ navigate }">
+                <button class = "nav-link" @click="navigate" role="link">
+                    Home
+                </button>
+            </router-link>
+            <router-link to="/" custom v-slot="{ navigate }">
+                <button class = "nav-link" @click="navigate" role="link">
+                    Workout Generator
+                </button>
+            </router-link>
+            <router-link to="/" custom v-slot="{ navigate }">
+                <button class = "nav-link" @click="navigate" role="link">
+                    Exercise History
+                </button>
+            </router-link>
+            <router-link to="/onboarding" custom v-slot="{ navigate }">
+                <button class = "nav-link" @click="navigate" role="link">
+                    Profile
+                </button>
+            </router-link>
         </div>
     </header>
 </template>
