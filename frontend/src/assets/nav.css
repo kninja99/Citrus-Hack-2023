@@ -1,0 +1,93 @@
+.nav-bar {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    /*position: absolute;*/
+    height: 80px;
+    top: 0px;
+    grid-area: header;
+    color: var(--White);
+    justify-content: flex-end;
+    padding-right: 25px;
+}
+
+.nav1 {
+    color: #FFFFFF;
+    font-weight: 100;
+    font-family: 'Archivo Black';
+    font-size: 18px;
+    padding-left: 25px;
+}
+
+.nav2 {
+    color: #FFFFFF;
+    font-weight: 100;
+    font-family: 'Archivo Black';
+    font-size: 18px;
+    padding-left: 25px;
+}
+
+.nav3 {
+    color: #FFFFFF;
+    font-weight: 100;
+    font-family: 'Archivo Black';
+    font-size: 18px;
+    padding-left: 25px;
+}
+
+.nav4 {
+    color: #FFFFFF;
+    font-weight: 100;
+    font-family: 'Archivo Black';
+    font-size: 18px;
+    padding-left: 25px;
+}
+
+.nav1:hover,
+.nav2:hover,
+.nav3:hover,
+.nav4:hover {
+    color: #D21312;
+    cursor: pointer;
+}
+
+/* nav icon styles */
+
+.nav-icon {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0px;
+}
+
+.nav-btn {
+    display: none;
+    position: fixed;
+    right: 30px;
+    top: 25px;
+    z-index: 2;
+}
+
+.nav-btn:hover {
+    cursor: pointer;
+}
+
+@media all and (max-width:642px) {
+    .nav-btn {
+        display: block;
+    }
+}
+
+@media all and (max-height:692px) {
+    .nav-btn {
+        display: block;
+    }
+}
+
+.nav-active {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
