@@ -54,12 +54,20 @@
 
     .nav-bar {
         display: none;
+        position: fixed;
+        width: 25%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        right: 0;
+        justify-content: center;
+        align-items: center;
     }
-}
 
-.nav-active {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
+    .nav-active {
+        display: flex;
+        height: 100%;
+        min-width: 200px;
+        width: 25%;
+        z-index: 1;
+    }
 }
