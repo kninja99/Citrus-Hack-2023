@@ -19,7 +19,6 @@ export default {
         radioEvent: function (e) {
             if (!this.form['equipment']) {
                 this.form['equipment'] = [];
-                console.log("array created")
             }
             let target = e.target;
             if (target.checked) {
@@ -42,6 +41,7 @@ export default {
             <p class="on-boarding-header">Please Answer The Following Questions</p>
             <div class="question-container">
                 <div class="question">{{ this.questions[this.questionIndex] }}</div>
+                <!-- if statements will render question inputs correctly -->
                 <form v-if="questionIndex == 0" class="question-inputs">
                     <input v-model="form['firstName']" type="text" placeholder="First Name" maxlength="50">
                     <input v-model="form['lastName']" type="text" placeholder="Last Name" maxlength="50">
@@ -85,6 +85,7 @@ export default {
                 </form>
             </div>
             <button v-if="questionIndex < 6" @click="this.advanceQuestion" class="form-btn">Next</button>
+            <!-- still need to wire up the finish btn to api -->
             <button v-else class="form-btn">Finish!</button>
         </div>
     </div>
