@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-            questions: ["Please Enter Your First and Last Name", "Please Enter Your Phone Number", "Please Enter your Height in Inches and Weight in Pounds"],
+            questions: ["Please Enter Your First and Last Name", "Please Enter Your Phone Number", "Please Enter your Height in Inches and Weight in Pounds", "How many times would you like to workout per week?"],
             questionIndex: 0,
             form: {}
         }
@@ -34,6 +34,17 @@ export default {
                     <input v-model="form['height']" name="height" type="number" min='0' max='96'>
                     <label for="weight">Weight in lb's</label>
                     <input v-model="form['weight']" name="weight" type="number" min='50' max='500'>
+                </form>
+                <form v-if="questionIndex == 3">
+                    <select v-model="form['workoutFrequency']" class="form-select" default="1">
+                        <option value="1" selected>Workout once a week</option>
+                        <option value="2">Workout twice a week</option>
+                        <option value="3">Workout three times a week</option>
+                        <option value="4">Workout four times a week</option>
+                        <option value="5">Workout five times a week</option>
+                        <option value="6">Workout six times a week</option>
+                        <option value="7">Workout seven times a week</option>
+                    </select>
                 </form>
             </div>
             <button @click="this.advanceQuestion" class="form-btn">Next</button>
