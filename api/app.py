@@ -23,7 +23,8 @@ def ping_pong():
 
 @app.route('/generate', methods=['GET'])
 def generate_workout():
-    workouts = gen_workout(MUSCLE, EXPERIENCE_LEVEL, EQUIPMENT)
+    workouts = jsonify(gen_workout(MUSCLE, EXPERIENCE_LEVEL, EQUIPMENT))
+    return workouts
 
 if __name__ == '__main__':
     app.run()

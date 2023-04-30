@@ -10,7 +10,6 @@ def gen_workout(muscle_group, experience_level, equipment):
     for w in workouts:
         d = []
         d.append(w.title)
-        d.append(w.desc)
         d.append(w.bodyPart)
         d.append(w.level)
 
