@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-            questions: ["Please Enter Your First and Last Name", "Please Enter Your Phone Number", "Please Enter your Height in Inches and Weight in Pounds", "How many times would you like to workout per week?", "What is your experiance in the gym?"],
+            questions: ["Please Enter Your First and Last Name", "Please Enter Your Phone Number", "Please Enter your Height in Inches and Weight in Pounds", "How many times would you like to workout per week?", "What is your experiance in the gym?", "Congradulations, you can now generate your first workout!"],
             questionIndex: 0,
             form: {}
         }
@@ -11,6 +11,26 @@ export default {
         advanceQuestion: function () {
             console.log(this.form)
             this.questionIndex += 1;
+        },
+        /**
+         * Event handler for check boxed to record data of the equipment avliable for users
+         * @param {Event} e 
+         */
+        radioEvent: function (e) {
+            if (!this.form['equipment']) {
+                this.form['equipment'] = [];
+                console.log("array created")
+            }
+            let target = e.target;
+            if (target.checked) {
+                this.form['equipment'].push(e.target.value);
+            }
+            else {
+                let indexValue = this.form['equipment'].indexOf(e.target.value);
+                if (indexValue > -1) { // only splice array when item is found
+                    this.form['equipment'].splice(indexValue, 1); // 2nd parameter means remove one item only
+                }
+            }
         }
     }
 }
@@ -55,13 +75,13 @@ export default {
                 </form>
                 <form v-if="questionIndex == 5">
                     <label for="body-weight">Body Weight Only</label>
-                    <input type="radio" name="body-weight" id="body-weight" value="Body Only">
-                    <label for="full-gym">full gym</label>
-                    <input type="radio" name="full-gym" id="full-gym" value="Full Gym">
-                    <label for="kettlebells">kettlebells</label>
-                    <input type="radio" name="kettlebells" id="kettlebells" value="Kettlebells">
-                    <label for="bands">bands</label>
-                    <input type="radio" name="bands" id="bands" value="Bands">
+                    <input @click="this.radioEvent" type="checkbox" name="body-weight" id="body-weight" value="Body Only">
+                    <label for="full-gym">Full Gym</label>
+                    <input @click="this.radioEvent" type="checkbox" name="full-gym" id="full-gym" value="Full Gym">
+                    <label for="kettlebells">Kettlebells</label>
+                    <input @click="this.radioEvent" type="checkbox" name="kettlebells" id="kettlebells" value="Kettlebells">
+                    <label for="bands">Resistance Bands</label>
+                    <input @click="this.radioEvent" type="checkbox" name="bands" id="bands" value="Bands">
                 </form>
             </div>
             <button @click="this.advanceQuestion" class="form-btn">Next</button>
