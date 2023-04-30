@@ -9,8 +9,10 @@ export default {
 </script>
 
 <template>
-    <div class="generate-workout-container">
+    <div class="container">
         <Header />
-        <h1>generate a new workout</h1>
+        <div class="generate-workout">
+            <h1 class="workout">generate a new workout</h1>
+        </div>
     </div>
 </template>
