@@ -3,7 +3,8 @@ from flask import Flask
 import pandas as pd
 from flask_sqlalchemy import SQLAlchemy
 
-from app import db, Workouts
+from init_db import db
+from models import Workouts
 
 data = pd.read_csv("../megaGymDataset.csv", index_col=0, delimiter=",")
 df = pd.DataFrame(data)
@@ -41,7 +42,3 @@ try:
 
 except Exception as e:
     print("Error while connecting to MySQL", e)
-
-finally:
-    db.session.close()
-
