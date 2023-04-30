@@ -2,6 +2,7 @@
 
 
 .on-boarding-questionair {
+    display: flex;
     width: 80%;
     height: 80%;
     max-width: 600px;
@@ -15,6 +16,7 @@
 }
 
 .on-boarding-header {
+    display: inline-flex;
     font-size: 24px;
     font-weight: 600;
     font-family: 'Archivo Black';
@@ -65,7 +67,7 @@
     background-color: #ffffff;
     padding: 0px 0px 0px 5px;
     padding-bottom: 5px;
-    width: 300px;
+    margin-bottom: 20px;
 }
 
 .fillform{
@@ -78,4 +80,9 @@
 .checkelement{
     display: flex;
     justify-content: space-between;
+}
+
+.form-select{
+    display: flex;
+    justify-content: center;
 }
