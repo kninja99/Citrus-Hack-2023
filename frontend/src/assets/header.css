@@ -46,7 +46,7 @@
 
 }
 
-@media all and (max-height:997px) {
+@media all and (max-width:912px) {
         .AI-title1 {
             font-size: 25px;
             /* padding-left: 25px; */
