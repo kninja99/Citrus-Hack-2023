@@ -1,4 +1,5 @@
 import os
+import json
 from flask import Flask, jsonify, render_template
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
@@ -24,6 +25,7 @@ def ping_pong():
 @app.route('/generate', methods=['GET'])
 def generate_workout():
     workouts = gen_workout(MUSCLE, EXPERIENCE_LEVEL, EQUIPMENT)
+    json_data = json.dumps(workouts)
 
 if __name__ == '__main__':
     app.run()
