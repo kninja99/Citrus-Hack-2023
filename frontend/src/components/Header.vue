@@ -17,8 +17,8 @@ export default {
         </div>
         <NavBtn />
         <div class="nav-bar">
-            <button class="nav-link">Home</button>
-            <button class="nav-link">Workout Generator</button>
+            <router-link class="nav-link" to="/">Home</router-link>
+            <router-link class="nav-link" to="/generate-workout">Workout Generator</router-link>
             <button class="nav-link">Profile</button>
             <button class="nav-link">Exercise History</button>
         </div>
