@@ -23,16 +23,16 @@ def ping_pong():
 
 @app.route('/generate', methods=['GET'])
 def generate_workout():
-    try {
+    try:
         muscle = request.args['Muscle']
         workouts = jsonify(gen_workout(muscle, EXPERIENCE_LEVEL, EQUIPMENT))
         return workouts
-    }
-    except {
+    
+    except:
         response = make_response("<h1>Failed</h1>")
         response.status_code = 404
         return response
-    }
+    
     
 
 
