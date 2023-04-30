@@ -28,19 +28,24 @@ export default {
     <div class="container">
         <Header />
         <div class="generate-workout">
-            <div class="workout"><button @click="this.generateWorkout" class="form-btn">Generate Workout</button></div>
-            <table v-if="this.workout" class="workout-table">
-                <tr>
-                    <th>Workout Name</th>
-                    <th>Muscle Group</th>
-                    <th>Difficulty</th>
-                    <th>sets</th>
-                    <th>reps</th>
-                </tr>
-                <tr v-for="workout in this.workout">
-                    <td v-for="data in workout">{{ data }}</td>
-                </tr>
-            </table>
+            <div class="workout">
+                <button @click="this.generateWorkout" class="generate-workout-btn">Generate Workout</button>
+                <table v-if="this.workout" class="workout-table">
+                    <tr class="workout-header-container">
+                        <th>Workout Name</th>
+                        <th>Muscle Group</th>
+                        <th>Difficulty</th>
+                        <th>sets</th>
+                        <th>reps</th>
+                    </tr>
+                    <tr class="workout-data-container" v-for="workout in this.workout">
+                        <td v-for="data in workout" class="workout-data">{{ data }}</td>
+                        <td class="workout-data">4</td>
+                        <td class="workout-data">10</td>
+                    </tr>
+                </table>
+            </div>
+
         </div>
     </div>
 </template>
