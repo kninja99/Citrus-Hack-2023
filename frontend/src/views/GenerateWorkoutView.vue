@@ -29,7 +29,13 @@ export default {
         <Header />
         <div class="generate-workout">
             <div class="workout">
-                <button @click="this.generateWorkout" class="generate-workout-btn">Generate Workout</button>
+                <div class="generation-form">
+                    <p class="ai-motivation-text">The only bad workout is the one that didn't happen. Generate your workout
+                        now
+                        using AI.</p>
+                    <button @click="this.generateWorkout" class="generate-workout-btn">Generate Workout</button>
+                </div>
+
                 <table v-if="this.workout" class="workout-table">
                     <tr class="workout-header-container">
                         <th>Workout Name</th>

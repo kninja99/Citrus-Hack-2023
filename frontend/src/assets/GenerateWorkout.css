@@ -7,6 +7,22 @@
     align-items: center;
 }
 
+.generation-form {
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 
+    #D21312 0px 0px 1000px 8px
+    ;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.ai-motivation-text {
+    font-size: 24px;
+    color: #FFF;
+}
+
 .generate-workout-btn {
     width: 150px;
     height: 60px;
@@ -25,7 +41,8 @@
     background-color: rgb(18, 18, 18);
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
+    margin-top: 80px;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
