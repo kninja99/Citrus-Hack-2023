@@ -4,6 +4,7 @@ import Header from "../components/Header.vue";
 export default {
     data: function () {
         return {
+            muscelTarget: "Chest",
             workout: null
         };
     },
@@ -12,13 +13,14 @@ export default {
     },
     methods: {
         generateWorkout: async function () {
+            console.log(this.muscelTarget);
             await axios.get('http://localhost:5000/generate')
                 .then((res) => {
                     this.workout = res.data;
                 })
                 .catch((err) => {
                     console.log(err);
-                })
+                });
         }
     }
 }
@@ -33,7 +35,17 @@ export default {
                     <p class="ai-motivation-text">The only bad workout is the one that didn't happen. Generate your workout
                         now
                         using AI.</p>
-                    <button @click="this.generateWorkout" class="generate-workout-btn">Generate Workout</button>
+                    <div class="workout-inputs">
+                        <select v-model="muscelTarget" id="muscle-selector" aria-placeholder="Please Select a Workout">
+                            <option value="Chest" selected>Chest</option>
+                            <option value="Triceps">Triceps</option>
+                            <option value="Biceps">Biceps</option>
+                            <option value="Shoulders">Shoulders</option>
+                            <option value="Quadriceps">Quads</option>
+                        </select>
+                        <button @click="this.generateWorkout" class="generate-workout-btn">Generate Workout</button>
+                    </div>
+
                 </div>
 
                 <table v-if="this.workout" class="workout-table">
