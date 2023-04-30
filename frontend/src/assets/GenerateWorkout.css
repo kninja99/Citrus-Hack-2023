@@ -41,8 +41,10 @@
     color: #FFF;
     border: 1px solid #ED2B2A;
     border-radius: 15px;
-    width: 100px;
+    width: 150px;
     height: 25px;
+    padding-left: 8px;
+    font-size: 14px;
 }
 
 .generate-workout-btn {

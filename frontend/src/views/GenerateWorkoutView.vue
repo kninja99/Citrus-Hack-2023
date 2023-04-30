@@ -4,7 +4,7 @@ import Header from "../components/Header.vue";
 export default {
     data: function () {
         return {
-            muscelTarget: "Chest",
+            muscleTarget: "Chest",
             workout: null
         };
     },
@@ -13,11 +13,10 @@ export default {
     },
     methods: {
         generateWorkout: async function () {
-            let muscelTarget = this.muscelTarget;
-            console.log(this.muscelTarget);
+            let muscleTarget = this.muscleTarget;
             await axios.get('http://localhost:5000/generate', {
                 params: {
-                    Muscle: muscelTarget
+                    Muscle: muscleTarget
                 }
             })
                 .then((res) => {
@@ -41,7 +40,7 @@ export default {
                         now
                         using AI.</p>
                     <div class="workout-inputs">
-                        <select v-model="muscelTarget" id="muscle-selector" aria-placeholder="Please Select a Workout">
+                        <select v-model="muscleTarget" id="muscle-selector" aria-placeholder="Please Select a Workout">
                             <option value="Chest" selected>Chest</option>
                             <option value="Triceps">Triceps</option>
                             <option value="Biceps">Biceps</option>
